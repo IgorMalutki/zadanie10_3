@@ -1,0 +1,52 @@
+﻿@import url(https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext);
+
+*{
+box-sizing: border-box;}
+
+
+.element {
+height: 400px;
+width: 400px;
+border-radius: 5px;
+background-position: center;
+background-size: cover;
+list-style: none;
+float: left;
+}
+
+.img-1 {background-image: url('https://kodilla.com/static/lessons/1.jpg');}
+.img-2 {background-image: url('https://kodilla.com/static/lessons/2.jpg');}
+.img-3 {background-image: url('https://kodilla.com/static/lessons/3.jpg');}
+.img-4 {background-image: url('https://kodilla.com/static/lessons/4.jpg');}
+.img-5 {background-image: url('https://kodilla.com/static/lessons/5.jpg');}
+.img-6 {background-image: url('https://kodilla.com/static/lessons/6.jpg');}
+
+#carousel {
+	margin: 0px auto;
+	height: 400px;
+	width: 400px;
+	border: 2px solid blue;
+	border-radius: 5px;
+	overflow: hidden; 
+}
+
+.lista {
+	margin: 0px;
+	padding: 0px;
+	width: 2400px;
+}
+
+i {
+	position: absolute;
+	height: 400px;
+	
+}
+i.fa {
+	line-height: 400px;
+	font-size: 40px;
+	
+}
+
+.fa-chevron-right {
+	text-align: right;
+}
