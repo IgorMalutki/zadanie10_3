@@ -3,6 +3,9 @@
 *{
 box-sizing: border-box;}
 
+body {
+	margin : 0;
+}
 
 .element {
 height: 400px;
@@ -48,5 +51,14 @@ i.fa {
 }
 
 .fa-chevron-right {
-	text-align: right;
+	margin-left: calc(50% + 250px);
+}
+
+.fa-chevron-left {
+	margin-left: calc(50% - 250px - 29px);
+}
+
+.kolka {
+	font-size: 40px;
+	display: inline-block;
 }
