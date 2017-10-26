@@ -1,48 +1,90 @@
 ﻿// scripts.js
 
-//  zadanie 10_3
 
-var carouselList = $("#carousel ul");
 
+
+//  zadanie 10_3_karuzela
 
 $(function(){
+	var carouselList = $("#carousel ul");
+	var currentPosition = 1; // ustawiam pozycje startową na 2-gi slajd index 1 
 	carouselList.css({marginLeft:-400});
-//	setInterval(changeSlide, 3000); 
+	$("#slidebar ul li").eq(currentPosition).css('color','blue'); // slide 
+	//	setInterval(changeSlide, 3000); 
+
+
+	function changeSlideRight() {
+		carouselList.animate({'marginLeft':-800}, 500, moveFirstSlide);	
+	}
+
+	function changeSlideLeft() {
+		carouselList.animate({'marginLeft': 0}, 500, moveLastSlide);	
+	}
+
+
+	function moveFirstSlide() {
+		var firstItem = carouselList.find("li:first");
+		var lastItem = carouselList.find("li:last");
+		lastItem.after(firstItem);	
+		carouselList.css({marginLeft:-400});
+	}
+
+	function moveLastSlide() {
+		var firstItem = carouselList.find("li:first");
+		var lastItem = carouselList.find("li:last");
+		firstItem.before(lastItem);	
+		carouselList.css({marginLeft:-400});
+	}
+
+	$('i.fa-chevron-left').click(function() {
+		$("#slidebar ul li").css('color','black');
+		//console.log(currentPosition);
+		if ( currentPosition == 0 ) {
+			currentPosition = 5 ;
+		} else currentPosition--;
+		//console.log(currentPosition);
+		$("#slidebar ul li").eq(currentPosition).css('color','blue');
+		changeSlideLeft();
+	});
+
+	$('i.fa-chevron-right').click(function() {
+		$("#slidebar ul li").css('color','black');
+		//console.log("current " + currentPosition);
+		if ( currentPosition == 5 ) {
+			currentPosition = 0 ;
+		} else currentPosition++;
+		//console.log("current " + currentPosition);
+		$("#slidebar ul li").eq(currentPosition).css('color','blue');
+		changeSlideRight();
+	});
+
+
+	$("#slidebar").on('click','li',function() {
+
+		clickPosition = $(this).index();
+		$("#slidebar ul li").css('color','black');
+		$(this).css('color','blue');
+		console.log("click " + clickPosition);
+		console.log("current " + currentPosition);
+		if (( clickPosition - currentPosition ) > 0) {
+			for ( i=currentPosition ; i<clickPosition; i++) {
+				console.log("i " + i);
+				changeSlideRight();
+			}
+		currentPosition = clickPosition;	
+		console.log("click " + clickPosition);
+		console.log("current " + currentPosition);
+		} else if (( clickPosition - currentPosition ) < 0) {
+					for ( i=currentPosition ; i>clickPosition; i--) {
+						console.log("i " + i);
+						changeSlideLeft();
+					}
+				currentPosition = clickPosition;	
+				console.log("click " + clickPosition);
+				console.log("current " + currentPosition);	
+			}
+	});
 });
-
-function changeSlideLeft() {
-	carouselList.animate({'marginLeft':-800}, 500, moveFirstSlide);	
-}
-
-function changeSlideRight() {
-	carouselList.animate({'marginLeft': 0}, 500, moveLastSlide);	
-}
-
-function moveFirstSlide() {
-	var firstItem = carouselList.find("li:first");
-	var lastItem = carouselList.find("li:last");
-	lastItem.after(firstItem);	
-	carouselList.css({marginLeft:-400});
-}
-
-function moveLastSlide() {
-	var firstItem = carouselList.find("li:first");
-	var lastItem = carouselList.find("li:last");
-	firstItem.before(lastItem);	
-	carouselList.css({marginLeft:-400});
-}
-
-$('i.fa-chevron-left').click(function() {
-changeSlideLeft();
-console.log("ok-left");
-});
-
-$('i.fa-chevron-right').click(function() {
-changeSlideRight();
-console.log("ok-right");
-});
-
-
 
 
 
@@ -108,7 +150,9 @@ function color(element) {
     alert("Greetings from the element <div> with class " + element.className + " :)")
     //element.style.backgroundColor = ''
 }
+// zadanie 9.6
 
+ 
 function checkOnclickEvent(param) {
 	
 	console.log(param);
@@ -126,7 +170,7 @@ buttonElem.addEventListener('click', function() {
   checkOnclickEvent(listElem)
 });
 
-
+//zadanie 
 
 function checkOnclickEvent(param) {
   console.log(param);

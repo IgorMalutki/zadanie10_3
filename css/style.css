@@ -44,7 +44,7 @@ i {
 	height: 400px;
 	
 }
-i.fa {
+div.strzalki i.fa {
 	line-height: 400px;
 	font-size: 40px;
 	
@@ -58,7 +58,8 @@ i.fa {
 	margin-left: calc(50% - 250px - 29px);
 }
 
-.kolka {
-	font-size: 40px;
-	display: inline-block;
+.kontrolki {
+	font-size: 20px;
+	padding: 0;
+	margin: 0;	
 }
