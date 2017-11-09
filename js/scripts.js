@@ -78,10 +78,10 @@ $(function(){
 					return "<img src=https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_960_720.jpg height='100' width='150' />";
 					break;
 				case 1:
-					return "<img src='https://cdn.pixabay.com/photo/2017/09/26/13/42/apple-2788662__340.jpg' height='100' width='150'/>";
+					return "<img src=https://cdn.pixabay.com/photo/2017/09/26/13/42/apple-2788662__340.jpg height='100' width='150'/>";
 					break;	
 				case 2:
-					return "<img src='https://cdn.pixabay.com/photo/2017/10/22/09/02/training-2877134__340.jpg' height='100' width='150'/>";
+					return "<img src=https://cdn.pixabay.com/photo/2017/10/22/09/02/training-2877134__340.jpg height='100' width='150'/>";
 					break;
 				case 3:
 					return "<img src='https://cdn.pixabay.com/photo/2017/10/03/09/11/hand-2811679__340.jpg' height='100' width='150'/>";
