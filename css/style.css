@@ -18,12 +18,12 @@ list-style: none;
 float: left;
 }
 
-.img-1 {background-image: url('https://kodilla.com/static/lessons/1.jpg');}
-.img-2 {background-image: url('https://kodilla.com/static/lessons/2.jpg');}
-.img-3 {background-image: url('https://kodilla.com/static/lessons/3.jpg');}
-.img-4 {background-image: url('https://kodilla.com/static/lessons/4.jpg');}
-.img-5 {background-image: url('https://kodilla.com/static/lessons/5.jpg');}
-.img-6 {background-image: url('https://kodilla.com/static/lessons/6.jpg');}
+.img-1 {background-image: url('https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_960_720.jpg');}
+.img-2 {background-image: url('https://cdn.pixabay.com/photo/2017/09/26/13/42/apple-2788662__340.jpg');}
+.img-3 {background-image: url('https://cdn.pixabay.com/photo/2017/10/22/09/02/training-2877134__340.jpg');}
+.img-4 {background-image: url('https://cdn.pixabay.com/photo/2017/10/03/09/11/hand-2811679__340.jpg');}
+.img-5 {background-image: url('https://cdn.pixabay.com/photo/2016/06/09/20/38/woman-1446557__340.jpg');}
+.img-6 {background-image: url('https://cdn.pixabay.com/photo/2017/09/27/09/21/concept-2791440__340.jpg');}
 
 #carousel {
 	margin: 0px auto;

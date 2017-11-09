@@ -75,22 +75,22 @@ $(function(){
 			mouseOverPosition = $(this).index();
 			switch (mouseOverPosition) {
 				case 0:
-					return "<img src=https://kodilla.com/static/lessons/1.jpg height='100' width='150' />";
+					return "<img src=https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_960_720.jpg height='100' width='150' />";
 					break;
 				case 1:
-					return "<img src='https://kodilla.com/static/lessons/2.jpg' height='100' width='150'/>";
+					return "<img src='https://cdn.pixabay.com/photo/2017/09/26/13/42/apple-2788662__340.jpg' height='100' width='150'/>";
 					break;	
 				case 2:
-					return "<img src='https://kodilla.com/static/lessons/3.jpg' height='100' width='150'/>";
+					return "<img src='https://cdn.pixabay.com/photo/2017/10/22/09/02/training-2877134__340.jpg' height='100' width='150'/>";
 					break;
 				case 3:
-					return "<img src='https://kodilla.com/static/lessons/4.jpg' height='100' width='150'/>";
+					return "<img src='https://cdn.pixabay.com/photo/2017/10/03/09/11/hand-2811679__340.jpg' height='100' width='150'/>";
 					break;
 				case 4:
-					return "<img src='https://kodilla.com/static/lessons/5.jpg' height='100' width='150'/>";
+					return "<img src='https://cdn.pixabay.com/photo/2016/06/09/20/38/woman-1446557__340.jpg' height='100' width='150'/>";
 					break;
 				case 5:
-					return "<img src='https://kodilla.com/static/lessons/6.jpg' height='100' width='150'/>";
+					return "<img src='https://cdn.pixabay.com/photo/2017/09/27/09/21/concept-2791440__340.jpg' height='100' width='150'/>";
 					break;
 			}	
 		}
