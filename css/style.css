@@ -5,6 +5,7 @@ box-sizing: border-box;}
 
 body {
 	margin : 0;
+	background-color: #f7f9fc;
 }
 
 .element {
@@ -60,6 +61,8 @@ div.strzalki i.fa {
 
 .kontrolki {
 	font-size: 20px;
-	padding: 0;
-	margin: 0;	
+	padding: 20px 0;
+	margin: 0;
+	position: absolute;
+	margin-left: calc(50% - 63.5px);
 }

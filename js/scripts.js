@@ -1,17 +1,15 @@
 ﻿// scripts.js
 
-
-
-
 //  zadanie 10_3_karuzela
 
 $(function(){
 	var carouselList = $("#carousel ul");
+	var numberOfSlides = carouselList.find("li:last").index();
 	var currentPosition = 1; // ustawiam pozycje startową na 2-gi slajd index 1 
-	carouselList.css({marginLeft:-400});
-	$("#slidebar ul li").eq(currentPosition).css('color','blue'); // slide 
+	carouselList.css({marginLeft:-400}); // przesuwam slajdy w aby na starcie wyświetlać 2 -gi slajd
+	$("#slidebar ul li").css('color','#34495e');
+	$("#slidebar ul li").eq(currentPosition).css('color','#bdc3c7'); // slide 
 	//	setInterval(changeSlide, 3000); 
-
 
 	function changeSlideRight() {
 		carouselList.animate({'marginLeft':-800}, 500, moveFirstSlide);	
@@ -20,7 +18,6 @@ $(function(){
 	function changeSlideLeft() {
 		carouselList.animate({'marginLeft': 0}, 500, moveLastSlide);	
 	}
-
 
 	function moveFirstSlide() {
 		var firstItem = carouselList.find("li:first");
@@ -37,54 +34,69 @@ $(function(){
 	}
 
 	$('i.fa-chevron-left').click(function() {
-		$("#slidebar ul li").css('color','black');
-		//console.log(currentPosition);
+		$("#slidebar ul li").css('color','#34495e');
 		if ( currentPosition == 0 ) {
-			currentPosition = 5 ;
+			currentPosition = numberOfSlides ;
 		} else currentPosition--;
-		//console.log(currentPosition);
-		$("#slidebar ul li").eq(currentPosition).css('color','blue');
+		$("#slidebar ul li").eq(currentPosition).css('color','#bdc3c7');
 		changeSlideLeft();
 	});
 
 	$('i.fa-chevron-right').click(function() {
-		$("#slidebar ul li").css('color','black');
-		//console.log("current " + currentPosition);
-		if ( currentPosition == 5 ) {
+		$("#slidebar ul li").css('color','#34495e');
+		if ( currentPosition == numberOfSlides ) {
 			currentPosition = 0 ;
 		} else currentPosition++;
-		//console.log("current " + currentPosition);
-		$("#slidebar ul li").eq(currentPosition).css('color','blue');
+		$("#slidebar ul li").eq(currentPosition).css('color','#bdc3c7');
 		changeSlideRight();
 	});
 
 
 	$("#slidebar").on('click','li',function() {
-
 		clickPosition = $(this).index();
-		$("#slidebar ul li").css('color','black');
-		$(this).css('color','blue');
-		console.log("click " + clickPosition);
-		console.log("current " + currentPosition);
+		$("#slidebar ul li").css('color','#34495e');
+		$(this).css('color','#bdc3c7');
 		if (( clickPosition - currentPosition ) > 0) {
 			for ( i=currentPosition ; i<clickPosition; i++) {
-				console.log("i " + i);
 				changeSlideRight();
 			}
 		currentPosition = clickPosition;	
-		console.log("click " + clickPosition);
-		console.log("current " + currentPosition);
-		} else if (( clickPosition - currentPosition ) < 0) {
-					for ( i=currentPosition ; i>clickPosition; i--) {
-						console.log("i " + i);
-						changeSlideLeft();
+		} 	else 	if (( clickPosition - currentPosition ) < 0) {
+						for ( i=currentPosition ; i>clickPosition; i--) {
+							changeSlideLeft();
+						}
+						currentPosition = clickPosition;	
 					}
-				currentPosition = clickPosition;	
-				console.log("click " + clickPosition);
-				console.log("current " + currentPosition);	
-			}
 	});
-});
+		
+	$("#slidebar ul li").tooltip({
+		items: "li",
+		content: function() {
+			mouseOverPosition = $(this).index();
+			switch (mouseOverPosition) {
+				case 0:
+					return "<img src=https://kodilla.com/static/lessons/1.jpg height='100' width='150' />";
+					break;
+				case 1:
+					return "<img src='https://kodilla.com/static/lessons/2.jpg' height='100' width='150'/>";
+					break;	
+				case 2:
+					return "<img src='https://kodilla.com/static/lessons/3.jpg' height='100' width='150'/>";
+					break;
+				case 3:
+					return "<img src='https://kodilla.com/static/lessons/4.jpg' height='100' width='150'/>";
+					break;
+				case 4:
+					return "<img src='https://kodilla.com/static/lessons/5.jpg' height='100' width='150'/>";
+					break;
+				case 5:
+					return "<img src='https://kodilla.com/static/lessons/6.jpg' height='100' width='150'/>";
+					break;
+			}	
+		}
+    });
+	
+}); //koniec głownej funkcji 
 
 
 
