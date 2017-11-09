@@ -75,7 +75,7 @@ $(function(){
 			mouseOverPosition = $(this).index();
 			switch (mouseOverPosition) {
 				case 0:
-					return "<img src=https://cdn.pixabay.com/photo/2017/11/05/21/45/balloon-2921973__340.jpg height='100' width='150' />";
+					return "<img src='https://cdn.pixabay.com/photo/2017/11/05/21/45/balloon-2921973__340.jpg' height='100' width='150' />";
 					break;
 				case 1:
 					return "<img src=https://cdn.pixabay.com/photo/2017/06/27/05/33/shanghai-2446326__340.jpg height='100' width='150'/>";
